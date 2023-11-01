@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload = "initialize();">
+<div id = "numoutput">0</body>
+<hr />
+<!--<button onclick = "modifyNumber(1);">Add 1</button>
+<button onclick = "modifyNumber(-1);">Subtract 1</button>
+<button onclick = "modifyNumber(5);">Add 5</button>
+<button onclick = "modifyNumber(-5);">Subtract 5</button>
+<button onclick = "modifyNumber(10);">Add 10</button>
+<button onclick = "modifyNumber(-10);">Subtract 10</button>-->
+<button onclick = "modifyNumber(getRandomInteger(-10, 10));">Modify The Number Randomly</button>
+
+<script>
+    function initialize()
+    {
+        numberOutput = document.getElementById("numoutput");
+        //modifier = 0;
+        number = 0;
+    }
+
+    function modifyNumber(modifier)
+    {
+    
+        //var modifier = getRandomInteger(-10, 10);
+        //number += modifier;
+        number += getRandomInteger(-10, 10);
+        display();
+    }
+
+    function display()
+    {
+        numberOutput.innerHTML = number;
+    }
+
+    function getRandomInteger(lower, upper)
+    {
+        //R = parseInt(rnd * (upper - (lower - 1)) + lower)
+        var multiplier = upper - (lower - 1);
+        var rnd = parseInt(Math.random() * multiplier) + lower;
+
+        return rnd;
+    }
+</script>
+</body>
+</html>
